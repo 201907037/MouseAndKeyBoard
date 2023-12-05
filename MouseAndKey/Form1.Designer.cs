@@ -44,6 +44,12 @@
             this.yPtxt = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.btn_E = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.information = new System.Windows.Forms.ToolStripMenuItem();
+            this.exp = new System.Windows.Forms.ToolStripMenuItem();
+            this.file = new System.Windows.Forms.ToolStripMenuItem();
+            this.exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mName
@@ -170,6 +176,47 @@
             this.btn_E.UseVisualStyleBackColor = true;
             this.btn_E.Click += new System.EventHandler(this.btn_E_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.file,
+            this.information});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(535, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // information
+            // 
+            this.information.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exp});
+            this.information.Name = "information";
+            this.information.Size = new System.Drawing.Size(43, 20);
+            this.information.Text = "정보";
+            // 
+            // exp
+            // 
+            this.exp.Name = "exp";
+            this.exp.Size = new System.Drawing.Size(180, 22);
+            this.exp.Text = "설명";
+            this.exp.Click += new System.EventHandler(this.exp_Click);
+            // 
+            // file
+            // 
+            this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exit});
+            this.file.Name = "file";
+            this.file.Size = new System.Drawing.Size(43, 20);
+            this.file.Text = "파일";
+            // 
+            // exit
+            // 
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(180, 22);
+            this.exit.Text = "종료";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -189,6 +236,7 @@
             this.Controls.Add(this.cnt);
             this.Controls.Add(this.kName);
             this.Controls.Add(this.mName);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -196,6 +244,8 @@
             this.Text = "마우스 키보드";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +268,11 @@
         private System.Windows.Forms.TextBox yPtxt;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btn_E;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem file;
+        private System.Windows.Forms.ToolStripMenuItem exit;
+        private System.Windows.Forms.ToolStripMenuItem information;
+        private System.Windows.Forms.ToolStripMenuItem exp;
     }
 }
 
