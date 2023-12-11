@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace MouseAndKey
 
         Thread clstart;
         Hook hook;
+        
 
         public Form1()
         {
@@ -63,22 +65,28 @@ namespace MouseAndKey
         }
         private void kButton_Click(object sender, EventArgs e)
         {
+           String message = this.txtKeyboard.Text;
+
+           
             Loop_cun2 = Convert.ToInt32(txtKeyRepeat.Text);
             Delay2 = int.Parse(txtKdelay.Text);
-            Thread.Sleep(1000); //매크로가 1초 뒤에 실행
+            hook = new Hook();
+            hook.SetHook();
+            Thread.Sleep(3000); // 매크로가 3초 뒤에 실행
             if (Loop_cun2 == 0)
             {
                 while (true)
                 {
-                    SendKeys.Send("" + this.txtKeyboard.Text);
+                    SendKeys.Send(message);
                     Thread.Sleep(Delay2);
-                }    
+                   
+                }
             }
             else
-            { 
+            {
                 for (int i = 0; i < Loop_cun2; i++)
                 {
-                    SendKeys.Send("" + this.txtKeyboard.Text);
+                    SendKeys.Send(message);
                     Thread.Sleep(Delay2);
                 }
             }
@@ -120,10 +128,28 @@ namespace MouseAndKey
             else { clstart.Abort(); hook.UnHook(); }
 
         }
+        private void MyThreadFunctionWithParameter(Object txt)
+        {
+            try
+            {
+               
+            }
+            finally
+            {
+                // 쓰레드 종료 전에 필요한 정리 작업 수행
+                hook.UnHook();
+            }
+        }
+
+        private void key_start(String txt)
+        {
+           
+        }
 
         private void btn_E_Click(object sender, EventArgs e)
         {
-            clstart.Abort(); hook.UnHook();
+            //clstart.Abort();hook.UnHook();
+            SendKeys.Flush();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

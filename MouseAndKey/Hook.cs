@@ -69,6 +69,10 @@ namespace MouseAndKey
                     hth.Abort();
                     //MessageBox.Show("컨트롤 눌림", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                if(vkCode.ToString() == "113")
+                {
+                    SendKeys.Flush();
+                }
 
                 return CallNextHookEx(hook, code, (int)wParam, lParam); // 키입력을 정상적으로 동작하게 합니다.
             }
@@ -86,5 +90,7 @@ namespace MouseAndKey
             hth = th;
             //MessageBox.Show("컨트롤 눌림", "성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public Hook() { }
     }
 }
