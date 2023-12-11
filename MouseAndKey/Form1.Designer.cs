@@ -34,7 +34,6 @@
             this.kName = new System.Windows.Forms.Label();
             this.cnt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtKeyboard = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.mButton = new System.Windows.Forms.Button();
             this.kButton = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             this.btn_E = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.file = new System.Windows.Forms.ToolStripMenuItem();
-            this.매크로단축키설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.information = new System.Windows.Forms.ToolStripMenuItem();
             this.exp = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +55,10 @@
             this.txtKdelay = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtKeyboard = new System.Windows.Forms.RichTextBox();
+            this.키보드매크로설명ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.마우스매크로설명ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.단축키정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,12 +74,11 @@
             // kName
             // 
             this.kName.AutoSize = true;
-            this.kName.Location = new System.Drawing.Point(278, 44);
+            this.kName.Location = new System.Drawing.Point(212, 44);
             this.kName.Name = "kName";
             this.kName.Size = new System.Drawing.Size(81, 12);
             this.kName.TabIndex = 5;
             this.kName.Text = "키보드 매크로";
-          
             // 
             // cnt
             // 
@@ -96,17 +97,10 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "반복횟수 :";
             // 
-            // txtKeyboard
-            // 
-            this.txtKeyboard.Location = new System.Drawing.Point(354, 130);
-            this.txtKeyboard.Name = "txtKeyboard";
-            this.txtKeyboard.Size = new System.Drawing.Size(104, 21);
-            this.txtKeyboard.TabIndex = 14;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(278, 133);
+            this.label4.Location = new System.Drawing.Point(212, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 6;
@@ -114,7 +108,7 @@
             // 
             // mButton
             // 
-            this.mButton.Location = new System.Drawing.Point(102, 239);
+            this.mButton.Location = new System.Drawing.Point(47, 239);
             this.mButton.Name = "mButton";
             this.mButton.Size = new System.Drawing.Size(57, 23);
             this.mButton.TabIndex = 11;
@@ -124,7 +118,7 @@
             // 
             // kButton
             // 
-            this.kButton.Location = new System.Drawing.Point(303, 239);
+            this.kButton.Location = new System.Drawing.Point(421, 239);
             this.kButton.Name = "kButton";
             this.kButton.Size = new System.Drawing.Size(56, 23);
             this.kButton.TabIndex = 15;
@@ -179,7 +173,7 @@
             // 
             // btn_E
             // 
-            this.btn_E.Location = new System.Drawing.Point(365, 239);
+            this.btn_E.Location = new System.Drawing.Point(111, 239);
             this.btn_E.Name = "btn_E";
             this.btn_E.Size = new System.Drawing.Size(57, 23);
             this.btn_E.TabIndex = 16;
@@ -201,30 +195,25 @@
             // file
             // 
             this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.매크로단축키설정ToolStripMenuItem,
             this.exit});
             this.file.Name = "file";
             this.file.Size = new System.Drawing.Size(43, 20);
-            this.file.Text = "파일";
-            // 
-            // 매크로단축키설정ToolStripMenuItem
-            // 
-            this.매크로단축키설정ToolStripMenuItem.Name = "매크로단축키설정ToolStripMenuItem";
-            this.매크로단축키설정ToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.매크로단축키설정ToolStripMenuItem.Text = "매크로 단축키 설정";
-            this.매크로단축키설정ToolStripMenuItem.Click += new System.EventHandler(this.매크로단축키설정ToolStripMenuItem_Click);
+            this.file.Text = "종료";
             // 
             // exit
             // 
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(178, 22);
+            this.exit.Size = new System.Drawing.Size(180, 22);
             this.exit.Text = "종료";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // information
             // 
             this.information.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exp});
+            this.exp,
+            this.키보드매크로설명ToolStripMenuItem,
+            this.마우스매크로설명ToolStripMenuItem,
+            this.단축키정보ToolStripMenuItem});
             this.information.Name = "information";
             this.information.Size = new System.Drawing.Size(43, 20);
             this.information.Text = "정보";
@@ -232,14 +221,14 @@
             // exp
             // 
             this.exp.Name = "exp";
-            this.exp.Size = new System.Drawing.Size(98, 22);
+            this.exp.Size = new System.Drawing.Size(180, 22);
             this.exp.Text = "설명";
             this.exp.Click += new System.EventHandler(this.exp_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(278, 106);
+            this.label1.Location = new System.Drawing.Point(212, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 12);
             this.label1.TabIndex = 7;
@@ -247,7 +236,7 @@
             // 
             // txtKeyRepeat
             // 
-            this.txtKeyRepeat.Location = new System.Drawing.Point(354, 103);
+            this.txtKeyRepeat.Location = new System.Drawing.Point(288, 77);
             this.txtKeyRepeat.Name = "txtKeyRepeat";
             this.txtKeyRepeat.Size = new System.Drawing.Size(57, 21);
             this.txtKeyRepeat.TabIndex = 13;
@@ -263,7 +252,7 @@
             // 
             // txtKdelay
             // 
-            this.txtKdelay.Location = new System.Drawing.Point(354, 158);
+            this.txtKdelay.Location = new System.Drawing.Point(288, 104);
             this.txtKdelay.Name = "txtKdelay";
             this.txtKdelay.Size = new System.Drawing.Size(57, 21);
             this.txtKdelay.TabIndex = 15;
@@ -281,17 +270,47 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(278, 161);
+            this.label6.Location = new System.Drawing.Point(212, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 12);
             this.label6.TabIndex = 20;
             this.label6.Text = "시간 지연 : ";
+            // 
+            // txtKeyboard
+            // 
+            this.txtKeyboard.Location = new System.Drawing.Point(259, 133);
+            this.txtKeyboard.Name = "txtKeyboard";
+            this.txtKeyboard.Size = new System.Drawing.Size(218, 96);
+            this.txtKeyboard.TabIndex = 21;
+            this.txtKeyboard.Text = "";
+            // 
+            // 키보드매크로설명ToolStripMenuItem
+            // 
+            this.키보드매크로설명ToolStripMenuItem.Name = "키보드매크로설명ToolStripMenuItem";
+            this.키보드매크로설명ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.키보드매크로설명ToolStripMenuItem.Text = "키보드 매크로 설명";
+            this.키보드매크로설명ToolStripMenuItem.Click += new System.EventHandler(this.키보드매크로설명ToolStripMenuItem_Click);
+            // 
+            // 마우스매크로설명ToolStripMenuItem
+            // 
+            this.마우스매크로설명ToolStripMenuItem.Name = "마우스매크로설명ToolStripMenuItem";
+            this.마우스매크로설명ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.마우스매크로설명ToolStripMenuItem.Text = "마우스 매크로 설명";
+            this.마우스매크로설명ToolStripMenuItem.Click += new System.EventHandler(this.마우스매크로설명ToolStripMenuItem_Click);
+            // 
+            // 단축키정보ToolStripMenuItem
+            // 
+            this.단축키정보ToolStripMenuItem.Name = "단축키정보ToolStripMenuItem";
+            this.단축키정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.단축키정보ToolStripMenuItem.Text = "단축키 정보";
+            this.단축키정보ToolStripMenuItem.Click += new System.EventHandler(this.단축키정보ToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 302);
+            this.Controls.Add(this.txtKeyboard);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtKdelay);
@@ -307,7 +326,6 @@
             this.Controls.Add(this.kButton);
             this.Controls.Add(this.mButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtKeyboard);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cnt);
             this.Controls.Add(this.kName);
@@ -333,7 +351,6 @@
         private System.Windows.Forms.Label kName;
         private System.Windows.Forms.TextBox cnt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtKeyboard;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button mButton;
         private System.Windows.Forms.Button kButton;
@@ -349,13 +366,16 @@
         private System.Windows.Forms.ToolStripMenuItem exit;
         private System.Windows.Forms.ToolStripMenuItem information;
         private System.Windows.Forms.ToolStripMenuItem exp;
-        private System.Windows.Forms.ToolStripMenuItem 매크로단축키설정ToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtKeyRepeat;
         private System.Windows.Forms.TextBox txtMdelay;
         private System.Windows.Forms.TextBox txtKdelay;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox txtKeyboard;
+        private System.Windows.Forms.ToolStripMenuItem 키보드매크로설명ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 마우스매크로설명ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 단축키정보ToolStripMenuItem;
     }
 }
 

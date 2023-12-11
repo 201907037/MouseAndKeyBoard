@@ -128,23 +128,8 @@ namespace MouseAndKey
             else { clstart.Abort(); hook.UnHook(); }
 
         }
-        private void MyThreadFunctionWithParameter(Object txt)
-        {
-            try
-            {
-               
-            }
-            finally
-            {
-                // 쓰레드 종료 전에 필요한 정리 작업 수행
-                hook.UnHook();
-            }
-        }
-
-        private void key_start(String txt)
-        {
-           
-        }
+      
+        
 
         private void btn_E_Click(object sender, EventArgs e)
         {
@@ -170,11 +155,6 @@ namespace MouseAndKey
             Application.Exit();
         }
 
-        private void 매크로단축키설정ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form2 f2 = new Form2();
-            f2.Show();
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -182,6 +162,23 @@ namespace MouseAndKey
             timer.Start();
         }
 
+        private void 단축키정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
+        private void 키보드매크로설명ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
+
+        private void 마우스매크로설명ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.Show();
+        }
 
         private void exp_Click(object sender, EventArgs e)
         {
